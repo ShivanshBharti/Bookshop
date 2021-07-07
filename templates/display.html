@@ -1,0 +1,24 @@
+<section class="container mt-3">
+    <h3 class="text-center">Books We Have</h3>
+    <p class="pt-2 pb-3 text-center">Books</p>
+    <div class="team slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+        {% for bk in books %}
+        <!-- team 1 -->
+
+
+        <div class="card-body">
+            <a href="{% url 'display' bk.id %}" class="card-title">{{bk.book_name}}</a>
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    {% endfor %}
+    </div>
+</section>

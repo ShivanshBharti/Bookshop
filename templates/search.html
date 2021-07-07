@@ -1,0 +1,74 @@
+<main class="searchpage">
+
+    <h1 class="text-center">
+        Search Result
+    </h1>
+
+
+    <section class="searchbox container mt-5 p-3 bg-accent">
+        <form method="GET" action="{% url 'search' %}">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <select name="genre" id="inputState" class="form-control">
+              <option selected disabled hidden>Genre</option>
+              {% for g in genre_search %}
+              <option value="{{g}}">{{g}}</option>
+              {% endfor %}
+            </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <select name="language" id="inputState" class="form-control">
+              <option selected disabled hidden>Language</option>
+              {% for l in language_search %}
+              <option value="{{l}}">{{l}}</option>
+              {% endfor %}
+              
+            </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <select name="author" class="form-control">
+              <option selected disabled hidden>Author</option>
+              {% for a in author_search %}
+              <option value="{{a}}">{{a}}</option>
+              {% endfor %}
+            </select>
+                </div>
+            </div>
+            <div class="text-center">
+
+                <button class="btn btn-light">Search</button>
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <section class="search-results container mt-3 grid">
+
+
+
+        <!-- person 1 -->
+        <div class="card border-0 text-center">
+
+            <div class="card-body">
+                <h5 class="card-title">Result:</h5>
+
+                {% for bk in books %}
+                <div class="person-description mt-2">
+                    <button name="book_name" class="btn btn-accent">Book:{{bk.book_name}}</button>
+                    <button name="genre" class="btn btn-accent">Genre:{{bk.genre}}</button>
+                    <button name="author" class="btn btn-accent"> Author:{{bk.author}}</button>
+                    <button name="language" class="btn btn-accent"> Language:{{bk.language}} </button>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+</main>

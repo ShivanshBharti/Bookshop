@@ -1,0 +1,25 @@
+<form method="POST" action="{% url 'home' %}">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-lg-6">
+            <input name="book_name" class="form-control" placeholder="Book Name">
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-lg-6">
+            <input name="author" class="form-control" placeholder="Author Name">
+        </div>
+        <div class="form-group col-lg-6">
+            <input name="genre" class="form-control" placeholder="Book Genre">
+        </div>
+    </div>
+    <div class="form-group">
+        <input name="language" class="form-control" placeholder="Book Language">
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-accent">Submit</button>
+    </div>
+
+</form>
